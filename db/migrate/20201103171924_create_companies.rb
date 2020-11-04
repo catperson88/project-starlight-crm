@@ -7,6 +7,8 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.string :state, null: false
       t.integer :zip, null: false
       t.text :description
+
+      t.belongs_to :account
       
       t.timestamps
     end

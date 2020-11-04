@@ -9,6 +9,8 @@ class CreateContacts < ActiveRecord::Migration[5.2]
       t.string :email_address 
       t.text :notes
 
+      t.belongs_to :company
+
       t.timestamps
     end
   end

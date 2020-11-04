@@ -6,6 +6,9 @@ class Company < ApplicationRecord
   validates :city, presence: true
   validates :state, null: false
   validates :zip, numericality: true
-  validates :description
+
+  belongs_to :account
+  has_many :contacts
+  has_many :deals
 
 end

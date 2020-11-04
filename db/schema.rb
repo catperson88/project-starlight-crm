@@ -33,20 +33,24 @@ ActiveRecord::Schema.define(version: 2020_11_03_204234) do
     t.string "state", null: false
     t.integer "zip", null: false
     t.text "description"
+    t.bigint "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_companies_on_account_id"
   end
 
   create_table "contacts", force: :cascade do |t|
     t.string "first_name"
-    t.string "last_name"
+    t.string "last_name", null: false
     t.string "title"
     t.string "linkedin_URL"
     t.string "phone"
     t.string "email_address"
     t.text "notes"
+    t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_contacts_on_company_id"
   end
 
   create_table "deals", force: :cascade do |t|
@@ -54,10 +58,12 @@ ActiveRecord::Schema.define(version: 2020_11_03_204234) do
     t.integer "value", null: false
     t.integer "discount_percentage"
     t.text "description"
+    t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "stage", null: false
     t.integer "quantity"
+    t.index ["company_id"], name: "index_deals_on_company_id"
   end
 
   create_table "products", force: :cascade do |t|

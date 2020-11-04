@@ -1,0 +1,48 @@
+<h2>Create a new Account</h3>
+
+<p>Accounts are meant to be 'master' files.
+An account can have multiple companies, contacts and deals associated with it.
+However, you should never have more than one account for a business entity- 
+Does your client have 150 business entities accross 3 continents? That's fine.
+They still get one account.</p>
+
+<%= form_for(@account) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+    </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zip, "ZIP Code" %><br />
+    <%= f.text_field :zip %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+<p>Seriously, making multiple accounts for the same business entity
+can really screw up searching, DO NOT make a new account until you deem it
+absolutely necessary. There is no de-duper yet and even the best ones fail.</p>
+  <div class="actions">
+    <%= f.submit "Add Review"%>
+  </div>
+<% end %>
+

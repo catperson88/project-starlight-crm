@@ -1,0 +1,40 @@
+<h2>Create a new Company for <%= @account.name %></h3>
+
+<%= form_for([@account, @company]) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+    </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zip, "ZIP Code" %><br />
+    <%= f.text_field :zip %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Company"%>
+  </div>
+<% end %>

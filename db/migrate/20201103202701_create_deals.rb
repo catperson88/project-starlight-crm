@@ -6,6 +6,8 @@ class CreateDeals < ActiveRecord::Migration[5.2]
       t.integer :discount_percentage
       t.text :description
 
+      t.belongs_to :company
+
       t.timestamps
     end
   end

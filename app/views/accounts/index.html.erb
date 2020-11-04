@@ -1,1 +1,8 @@
 <h2>I am the Accounts Index page and I am displaying correctly</h2>
+
+
+<ul><%@Accounts.each do |account|%>
+    <li><%=link_to account.name, account %></li>
+<%end%>
+
+<%=link_to "Add an Account", new_account_path %>

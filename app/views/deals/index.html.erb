@@ -1,1 +1,8 @@
 <p>I will one day be the pipeline, and I will be awesome</p>
+
+
+<ul><%@Deals.each do |deal|%>
+    <li><%=link_to deal.name, deal %></li>
+<%end%>
+
+<%=link_to "Add a Deal", new_deal_path %>

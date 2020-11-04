@@ -1,0 +1,44 @@
+<h3>Warning. You must assign an account. Otherwise the record will not save.</h3>
+
+<%= form_for(@company) do |f| %>
+  <div class="field">
+    <%= f.label :account_name %><br />
+    <%= f.text_field :account %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+    </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zip, "ZIP Code" %><br />
+    <%= f.text_field :zip %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Company"%>
+  </div>
+<% end %>
+

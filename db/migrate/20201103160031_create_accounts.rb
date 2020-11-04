@@ -8,6 +8,7 @@ class CreateAccounts < ActiveRecord::Migration[5.2]
       t.integer :zip, null: false
       t.text :description
 
+
       t.timestamps
     end
   end
