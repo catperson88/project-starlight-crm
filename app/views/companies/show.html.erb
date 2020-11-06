@@ -1,0 +1,31 @@
+<div class="title">
+<h3><%=@company.name%></h3>
+</div>
+
+<div class="info-sidebox">
+<ul>
+<li><%=@company.address%></li>
+<li><%=@company.state%></li>
+<li><%=@company.zip%></li>
+<li></li>
+</ul>
+</div>
+<div class="description-sidebox">
+<%=@company.description%>
+</div>
+
+<div class=sub-navigation>
+<ul class="inline-bar-styling">
+<%=link_to "Add A Deal", new_company_deal_path(@company) %>
+<%=link_to "Add A Contact", new_company_contact_path(@company) %>
+</ul>
+</div>
+
+<div class="photo">
+<p>A Photo will go here ass soon as I figure out how</p>
+</div>
+
+<div class="app">
+<p>This will be where the activity feed works</p>
+<p>as soon as I figure out how to build one</p>
+</div>

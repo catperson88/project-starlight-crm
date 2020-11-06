@@ -1,0 +1,33 @@
+<div class="title">
+<h3><%=@deal.deal_name%></h3>
+</div>
+
+<div class="info-sidebox">
+<ul>
+<li><%=@deal.deal_name%></li>
+<li><%=@deal.company.name%></li>
+<li><%=@deal.value%></li>
+<li><%=@deal.discount_percentage%></li>
+
+</ul>
+</div>
+<div class="description-sidebox">
+<%=@deal.description%>
+</div>
+
+
+
+
+<div class=sub-navigation>
+<ul class="inline-bar-styling">
+<%=link_to "Back to Pipeline", deals_path %>
+</ul>
+</div>
+
+
+
+<div class="app">
+<p>This will be where the activity feed works</p>
+<p>as soon as I figure out how to build one</p>
+</div>
+

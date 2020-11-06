@@ -4,6 +4,10 @@ class CompaniesController < ApplicationController
     @Companies = Company.all
   end
 
+  def show
+    @company = Company.find(params[:id])
+  end
+
   def new
     @company = Company.new
     @account_id= params[:account_id]
@@ -16,22 +20,35 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @account= Account.find(params[:account_id])
-    @company = Company.new(account_params_0)
-    @company.account = @account
-      if @company.save
-        flash[:notice]= "Company added successfully"
-        redirect_to @account
-      else
-        flash.now[:error] = @company.errors.full_messages.to_sentence
-        render :new
-      end
+    @account_nil_catch = params[:company][:account]
+    if @account_nil_catch.nil? 
+      @account= Account.find(params[:account_id])
+      dry_up_create(account_params)
+    else  
+      @account = Account.find_by! name: @account_nil_catch
+      dry_up_create(account_params)
+    end
+
+    if @company.save
+      flash[:notice]= "Company added successfully"
+      redirect_to @account
+    elsif @company.save == false && @account_nil_catch.nil?
+      flash.now[:error] = @company.errors.full_messages.to_sentence
+      render :new_1
+    elsif @company.save == false && @account_nil_catch.nil? == false
+      flash.now[:error] = @company.errors.full_messages.to_sentence
+      render :new
+    end
   end
 
   private
 
-  def account_params_0
-    params.require(:company).permit(:name, :address, :city, :state, :zip, :description)
+  def dry_up_create(params)
+      @company = Company.new(params)
+      @company.account = @account
   end
 
+  def account_params
+    params.require(:company).permit(:name, :address, :city, :state, :zip, :description)
+  end
 end

@@ -1,4 +1,10 @@
-<%= form_for([@company, @contact]) do |f| %>
+<h3>Warning. You must assign an company. Otherwise the record will not save.</h3>
+
+<%= form_for(@contact) do |f| %>
+  <div class="field">
+    <%= f.label :company %><br />
+    <%= f.text_field :company %>
+  </div>
 
 
   <div class="field">
@@ -36,11 +42,4 @@
     <%= f.submit "Add Contact"%>
   </div>
 <% end %>
-
-
-
-
-
-
-
 

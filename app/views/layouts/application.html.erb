@@ -23,6 +23,15 @@
     </section>
   </nav>
 
+  <nav class="nav-bar">
+    <ul class="navigation">
+      <li><%=link_to "Accounts", accounts_path %></li>
+      <li><%=link_to "Companies", companies_path %></li>
+      <li><%=link_to "Contacts", contacts_path %></li>
+      <li><%=link_to "Deals", deals_path %></li>
+    </ul>
+  </nav>
+
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
       <%= value %>

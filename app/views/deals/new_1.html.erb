@@ -1,7 +1,12 @@
-<%= form_for([@company, @deal]) do |f| %>
+<h3>Warning. You must assign an company. Otherwise the record will not save.</h3>
 
-
+<%= form_for(@deal) do |f| %>
   <div class="field">
+    <%= f.label :company %><br />
+    <%= f.text_field :company %>
+  </div>
+
+<div class="field">
     <%= f.label :deal_name %><br />
     <%= f.text_field :deal_name %>
   </div>
@@ -16,12 +21,17 @@
     <%= f.text_field :discount_percentage %>
   </div>
 
+    <div class="field">
+    <%= f.label :stage %><br />
+    <%= f.text_field :stage %>
+  </div>
+
   <div class="field">
     <%= f.label :quantity %><br />
     <%= f.text_field :quantity %>
   </div>
 
-    <div class="field">
+  <div class="field">
     <%= f.label :description %><br />
     <%= f.text_field :description %>
   </div>
@@ -29,7 +39,7 @@
   <div class="actions">
     <%= f.submit "Add Deal"%>
   </div>
-<% end %>
 
+<% end %>
 
 

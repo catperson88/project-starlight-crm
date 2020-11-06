@@ -6,11 +6,16 @@ Rails.application.routes.draw do
     resources :companies, only: [:index, :show, :new, :create, :delete]
    end
 
-   resources :companies, only: [:index, :show, :new, :create, :delete]
+   resources :companies, only: [:index, :show, :new, :create, :delete] do 
+    resources :deals, only: [:index, :show, :new, :create, :delete]
+    resources :contacts, only: [:index, :show, :new, :create, :delete] 
+   end
 
    resources :contacts, only: [:index, :show, :new, :create, :delete]
 
-   resources :deals, only: [:index, :show, :new, :create, :delete]
+   resources :deals, only: [:index, :show, :new, :create, :delete] do 
+    resources :companies, only: [:index, :show, :new, :create, :delete]
+   end
 
    resources :products, only: [:index, :show, :new, :create, :delete]
 end
