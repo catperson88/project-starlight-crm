@@ -1,31 +1,52 @@
-<div class="title">
-<h3><%=@company.name%></h3>
+
+
+<div class="app-dashboard shrink-medium">
+  <div class="row expanded app-dashboard-top-nav-bar">
+    <div class="columns medium-2">
+      <p class="app-dashboard-logo"><%=@company.name%></p>
+    </div>
+
+  </div>
+
+  <div class="app-dashboard-body off-canvas-wrapper">
+    <div id="app-dashboard-sidebar" class="app-dashboard-sidebar position-left off-canvas off-canvas-absolute reveal-for-medium" data-off-canvas>
+      <div class="app-dashboard-sidebar-title-area">
+        <div class="app-dashboard-close-sidebar">
+          <h3 class="app-dashboard-sidebar-block-title">Details</h3>
+        </div>
+      </div>
+      <div class="app-dashboard-sidebar-inner">
+        <ul class="menu vertical">
+          <li><a href="#" class="is-active">
+            <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">Address: <%=@company.address%></span>
+          </li>
+          <li>
+            <i class="large fa fa-hourglass"></i><span class="app-dashboard-sidebar-text"> City: <%=@company.city%></span>
+          </li>
+          <li>
+            <i class="large fa fa-industry"></i><span class="app-dashboard-sidebar-text"> State: <%=@company.state%></span>
+          </li>
+          <li>
+            <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">Zip: <%=@company.zip%></span>
+          </li>
+          <li><a>
+            <i class="large fa fa-industry"></i><span class="app-dashboard-sidebar-text"><%=@company.description%></span>
+          </a></li>
+          <li><%=link_to "Add A Deal", new_company_deal_path(@company) %></li>
+          <li><%=link_to "Add A Contact", new_company_contact_path(@company) %></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="app-dashboard-body-content off-canvas-content" data-off-canvas-content>
+      <div id="app">
+        <h2 class="text-center">At some Point in the near future, an activities bar will live here. </h2>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="info-sidebox">
-<ul>
-<li><%=@company.address%></li>
-<li><%=@company.state%></li>
-<li><%=@company.zip%></li>
-<li></li>
-</ul>
-</div>
-<div class="description-sidebox">
-<%=@company.description%>
-</div>
 
-<div class=sub-navigation>
-<ul class="inline-bar-styling">
-<%=link_to "Add A Deal", new_company_deal_path(@company) %>
-<%=link_to "Add A Contact", new_company_contact_path(@company) %>
-</ul>
-</div>
 
-<div class="photo">
-<p>A Photo will go here ass soon as I figure out how</p>
-</div>
 
-<div class="app">
-<p>This will be where the activity feed works</p>
-<p>as soon as I figure out how to build one</p>
-</div>
+
