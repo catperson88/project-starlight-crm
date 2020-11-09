@@ -1,4 +1,4 @@
-class Activities < ActiveRecord::Migration[5.2]
+class CreateActivities < ActiveRecord::Migration[5.2]
   def change
     create_table :activities do |t|
       t.string :type, null: false
