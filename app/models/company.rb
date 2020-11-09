@@ -10,5 +10,5 @@ class Company < ApplicationRecord
   belongs_to :account
   has_many :contacts
   has_many :deals
-
+  has_many :activities
 end

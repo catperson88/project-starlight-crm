@@ -5,6 +5,7 @@ class Deal < ApplicationRecord
 
   belongs_to :company
   has_many :contacts, through: :accounts
+  has_many :activities
 
 end
 
