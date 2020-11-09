@@ -29,12 +29,14 @@
       <%= f.text_field :discount_percentage, placeholder: "Discount Percentage" %>
     </div>
 
+
+
     <div class="input-group">
       <span class="input-group-label">
         <i class="fa fa-key"></i>
       </span>
       <% f.label :stage %>
-      <%= f.text_field :stage, placeholder: "Stage" %>
+      <%= f.select :stage, options_for_select(["Lead", "Qualified Lead", "Meeting", "Presentation", "Negotiation", "Closed Won", "Closed Lost", "Disqualified" ]) %>
     </div>
 
     <div class="input-group">
