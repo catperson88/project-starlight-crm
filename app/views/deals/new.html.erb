@@ -1,35 +1,53 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
 <%= form_for([@company, @deal]) do |f| %>
 
+  <h4>Create a Deal for <%=@company.name%></h4>
 
-  <div class="field">
-    <%= f.label :deal_name %><br />
-    <%= f.text_field :deal_name %>
-  </div>
+    <div class="form-icons">
+      <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-user"></i>
+      </span>
+      <% f.label :deal_name %>
+      <%= f.text_field :deal_name, placeholder: "Deal Name" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :value %><br />
-    <%= f.text_field :value %>
-  </div>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-envelope"></i>
+      </span>
+      <% f.label :value %>
+      <%= f.text_field :value, placeholder: "Value" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :discount_percentage %><br />
-    <%= f.text_field :discount_percentage %>
-  </div>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+      <% f.label :discount_percentage %>
+      <%= f.text_field :discount_percentage, placeholder: "Discount Percentage" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :quantity %><br />
-    <%= f.text_field :quantity %>
-  </div>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+      <% f.label :stage %>
+      <%= f.text_field :stage, placeholder: "Stage" %>
+    </div>
 
-    <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+      <% f.label :description %>
+      <%= f.text_field :description, placeholder: "Description" %>
 
+    </div>
   <div class="actions">
-    <%= f.submit "Add Deal"%>
+    <%= f.submit "Create Deal"%>
   </div>
-<% end %>
-
-
+  </div>
+  <% end %>
 

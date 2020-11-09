@@ -20,18 +20,18 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @account_nil_catch = params[:company][:account]
+    @company_nil_catch = params[:company][:account]
     if @account_nil_catch.nil? 
       @account= Account.find(params[:account_id])
-      dry_up_create(account_params)
+      dry_up_create(company_params)
     else  
-      @account = Account.find_by! name: @account_nil_catch
-      dry_up_create(account_params)
+      @account = Account.find_by! name: @company_nil_catch
+      dry_up_create(company_params)
     end
 
     if @company.save
       flash[:notice]= "Company added successfully"
-      redirect_to @account
+      redirect_to @company
     elsif @company.save == false && @account_nil_catch.nil?
       flash.now[:error] = @company.errors.full_messages.to_sentence
       render :new_1
@@ -48,7 +48,7 @@ class CompaniesController < ApplicationController
       @company.account = @account
   end
 
-  def account_params
+  def company_params
     params.require(:company).permit(:name, :address, :city, :state, :zip, :description)
   end
 end

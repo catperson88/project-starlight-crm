@@ -15,5 +15,22 @@
  *= require foundation_and_overrides
 
  */
+body {
+ background-image: url("https://cff2.earth.com/uploads/2018/02/22001907/Nocturnal-creatures-use-starlight-as-a-compass-in-the-dark-.jpg");
+ background-color: #0A054C;
+}
+
+.splash  {
+ background-image: url("https://cff2.earth.com/uploads/2018/02/22001907/Nocturnal-creatures-use-starlight-as-a-compass-in-the-dark-.jpg");
+ background-color: transparent;
+ color: #F2DD0D 
+
+}
+
+ .splash a {
+   color: #F2DD0D;
+   background-color: transparent
+ }
+
 
  

@@ -1,3 +1,55 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+
+<div class="app-dashboard shrink-medium">
+  <div class="row expanded app-dashboard-top-nav-bar">
+    <div class="columns medium-2">
+      <p class="app-dashboard-logo"><%=@deal.deal_name%></p>
+    </div>
+
+  </div>
+
+  <div class="app-dashboard-body off-canvas-wrapper">
+    <div id="app-dashboard-sidebar" class="app-dashboard-sidebar position-left off-canvas off-canvas-absolute reveal-for-medium" data-off-canvas>
+      <div class="app-dashboard-sidebar-title-area">
+        <div class="app-dashboard-close-sidebar">
+          <h3 class="app-dashboard-sidebar-block-title">Details</h3>
+        </div>
+      </div>
+      <div class="app-dashboard-sidebar-inner">
+        <ul class="menu vertical">
+          <li><a href="#" class="is-active">
+            <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">Deal For: <%=@deal.company.name%></span>
+          </li>
+          <li>
+            <i class="large fa fa-hourglass"></i><span class="app-dashboard-sidebar-text"> Value: <%=@deal.value%></span>
+          </li>
+          <li>
+            <i class="large fa fa-industry"></i><span class="app-dashboard-sidebar-text"> Title: <%=@deal.discount_percentage%></span>
+          </li>
+          <li>
+            <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">Quantity: <%=@deal.quantity%></span>
+          </li>
+          <li>
+            <i class="large fa fa-industry"></i><span class="app-dashboard-sidebar-text">Stage: <%=@deal.stage%></span>
+          </li>
+          <li>
+            <i class="large fa fa-industry"></i><span class="app-dashboard-sidebar-text">Description:<%=@deal.description%></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="app-dashboard-body-content off-canvas-content" data-off-canvas-content>
+      <div id="app">
+        <h2 class="text-center">At some Point in the near future, an activities bar will live here. </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <div class="title">
 <h3><%=@deal.deal_name%></h3>
 </div>

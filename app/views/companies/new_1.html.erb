@@ -1,44 +1,68 @@
-<h3>Warning. You must assign an account. Otherwise the record will not save.</h3>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+
 
 <%= form_for(@company) do |f| %>
-  <div class="field">
-    <%= f.label :account_name %><br />
-    <%= f.text_field :account %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
-  </div>
+  <h4>Create a Company</h4>
+    <p>Warning. You must assign an account. Otherwise the record will not save.</p>
+    <div class="form-icons">
+      <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-user"></i>
+      </span>
+        <% f.label :account_name %>
+        <%= f.text_field :account, placeholder: "Account" %>
     </div>
 
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </div>
+    <div class="form-icons">
+      <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-user"></i>
+      </span>
+      <% f.label :name %>
+      <%= f.text_field :name, placeholder: "Name" %>
+    </div>
 
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-envelope"></i>
+      </span>
+      <% f.label :address %>
+      <%= f.text_field :address, placeholder: "Street Address" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </div>
-
-  <div class="field">
-    <%= f.label :zip, "ZIP Code" %><br />
-    <%= f.text_field :zip %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+      <% f.label :city %>
+      <%= f.text_field :city, placeholder: "City" %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+      <% f.label :state %>
+      <%= f.text_field :state, placeholder: "State" %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+      <% f.label :zip %>
+      <%= f.text_field :zip, placeholder: "ZIP Code" %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+      <% f.label :description %>
+      <%= f.text_field :description, placeholder: "Description" %>
+    </div>
   <div class="actions">
-    <%= f.submit "Add Company"%>
+    <%= f.submit "Create Company"%>
   </div>
-<% end %>
+  </div>
+  <% end %>
+
 

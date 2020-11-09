@@ -1,45 +1,68 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
 <h3>Warning. You must assign an company. Otherwise the record will not save.</h3>
 
 <%= form_for(@contact) do |f| %>
-  <div class="field">
-    <%= f.label :company %><br />
-    <%= f.text_field :company %>
-  </div>
 
+  <h4>Create a Contact</h4>
+    <p>Warning. You must assign an company to this contact. Otherwise the record will not save.</p>
+    <div class="form-icons">
+      <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-user"></i>
+      </span>
+        <% f.label :company %>
+        <%= f.text_field :company, placeholder: "Company" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
+    <div class="form-icons">
+      <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-user"></i>
+      </span>
+      <% f.label :first_namee %>
+      <%= f.text_field :first_name, placeholder: "First Name" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-envelope"></i>
+      </span>
+      <% f.label :last_name %>
+      <%= f.text_field :last_name, placeholder: "Last Name" %>
+    </div>
 
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email_address %><br />
-    <%= f.text_field :email_address %>
-  </div>
-
-    <div class="field">
-    <%= f.label :notes %><br />
-    <%= f.text_field :notes %>
-  </div>
-
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+      <% f.label :title %>
+      <%= f.text_field :title, placeholder: "Title" %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+      <% f.label :phone %>
+      <%= f.text_field :phone, placeholder: "Phone" %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+      <% f.label :email_address%>
+      <%= f.text_field :email_address, placeholder: "Email Address" %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+      <% f.label :notes %>
+      <%= f.text_field :notes, placeholder: "Notes" %>
+    </div>
   <div class="actions">
-    <%= f.submit "Add Contact"%>
+    <%= f.submit "Create Contact"%>
   </div>
-<% end %>
+  </div>
+  <% end %>
 

@@ -1,7 +1,30 @@
-<h2>I am the Companies Index page and I am displaying correctly</h2>
+<table class="table-expand">
+  <thead>
+    <tr class="table-expand-row">
+      <th width="200">Companies</th>
+      <th>Company name</th>
+      <th class="text-right" width="150">Company Address</th>
+      <th width="150">Company City</th>
+    </tr>
+  </thead>
 
-<ul><%@Companies.each do |company|%>
-    <li><%=link_to company.name, company %></li>
-<%end%>
 
-<%=link_to "Add a Company", new_company_path %>
+    <tr>
+    <td><%=link_to "Add an Company", new_company_path %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+  <tbody>
+  <%@Companies.each do |company|%>
+    <tr class="table-expand-row" data-open-details>
+  </tr>
+    <tr class="table-expand-row" data-open-details>
+      <td></td>
+      <td><%=link_to company.name, company%></td>
+      <td class="text-right"><%=company.address%></td>
+      <td><%= company.city%> <span class="expand-icon"></span></td>
+    </tr>
+    <%end%>
+

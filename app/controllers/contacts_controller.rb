@@ -23,13 +23,14 @@ class ContactsController < ApplicationController
     @company_nil_catch = params[:contact][:company]
     if @company_nil_catch.nil? 
       @company= Company.find(params[:company_id])
-      dry_up_create(contact_params)
+      @contact = Contact.new(contact_params)
+      @contact.company = @company
     else  
       @company = Company.find_by! name: @company_nil_catch
       dry_up_create(contact_params)
     end
 
-    if @company.save
+    if @contact.save
       flash[:notice]= "Contact added successfully"
       redirect_to @contact
     elsif @contact.save == false && @contact_nil_catch.nil?
@@ -50,6 +51,7 @@ end
   def dry_up_create(params)
       @contact = Contact.new(params)
       @contact.company = @company
+      return @contact
   end
 
   def contact_params

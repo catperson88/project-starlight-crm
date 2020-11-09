@@ -1,40 +1,56 @@
-<div class="title">
-<h3><%=@contact.name%></h3>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+<div class="app-dashboard shrink-medium">
+  <div class="row expanded app-dashboard-top-nav-bar">
+    <div class="columns medium-2">
+      <p class="app-dashboard-logo"><%=@contact.first_name%></p>
+    </div>
+
+  </div>
+
+  <div class="app-dashboard-body off-canvas-wrapper">
+    <div id="app-dashboard-sidebar" class="app-dashboard-sidebar position-left off-canvas off-canvas-absolute reveal-for-medium" data-off-canvas>
+      <div class="app-dashboard-sidebar-title-area">
+        <div class="app-dashboard-close-sidebar">
+          <h3 class="app-dashboard-sidebar-block-title">Details</h3>
+        </div>
+      </div>
+      <div class="app-dashboard-sidebar-inner">
+        <ul class="menu vertical">
+          <li><a href="#" class="is-active">
+            <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">First Name: <%=@contact.first_name%></span>
+          </li>
+          <li>
+            <i class="large fa fa-hourglass"></i><span class="app-dashboard-sidebar-text"> Last Name: <%=@contact.last_name%></span>
+          </li>
+          <li>
+            <i class="large fa fa-industry"></i><span class="app-dashboard-sidebar-text"> Title: <%=@contact.title%></span>
+          </li>
+          <li>
+            <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">LinkedIn: <%=@contact.linkedin_URL%></span>
+          </li>
+          <li>
+            <i class="large fa fa-industry"></i><span class="app-dashboard-sidebar-text">Phone: <%=@contact.phone%></span>
+          </li>
+          <li>
+            <i class="large fa fa-industry"></i><span class="app-dashboard-sidebar-text">Email Address:<%=@contact.email_address%></span>
+          </li>
+          <li>
+            <i class="large fa fa-industry"></i><span class="app-dashboard-sidebar-text">Notes<%=@contact.notes%></span>
+          </li>
+          <li>
+            <i class="large fa fa-industry"></i><span class="app-dashboard-sidebar-text">Company: <%=@contact.company.name%></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="app-dashboard-body-content off-canvas-content" data-off-canvas-content>
+      <div id="app">
+        <h2 class="text-center">At some Point in the near future, an activities bar will live here. </h2>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="info-sidebox">
-<ul>
-<li><%=@company.address%></li>
-<li><%=@company.state%></li>
-<li><%=@company.zip%></li>
-<li></li>
-</ul>
-</div>
-<div class="description-sidebox">
-<%=@company.description%>
-</div>
 
-<div class="info-dealbox">
-<ul>
-<li><%=@company.address%></li>
-<li><%=@company.state%></li>
-<li><%=@company.zip%></li>
-<li></li>
-</ul>
-</div>
-
-
-<div class=sub-navigation>
-<ul class="inline-bar-styling">
-<%=link_to "Add A Deal", new_contact_deal_path(@contact) %>
-</ul>
-</div>
-
-<div class="photo">
-<p>A Photo will go here ass soon as I figure out how</p>
-</div>
-
-<div class="app">
-<p>This will be where the activity feed works</p>
-<p>as soon as I figure out how to build one</p>
-</div>

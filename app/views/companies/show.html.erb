@@ -1,3 +1,4 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
 
 <div class="app-dashboard shrink-medium">
@@ -33,6 +34,7 @@
             <i class="large fa fa-industry"></i><span class="app-dashboard-sidebar-text"><%=@company.description%></span>
           </a></li>
           <li><%=link_to "Add A Deal", new_company_deal_path(@company) %></li>
+          
           <li><%=link_to "Add A Contact", new_company_contact_path(@company) %></li>
         </ul>
       </div>

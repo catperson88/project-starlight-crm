@@ -1,45 +1,67 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
 <h3>Warning. You must assign an company. Otherwise the record will not save.</h3>
 
 <%= form_for(@deal) do |f| %>
-  <div class="field">
-    <%= f.label :company %><br />
-    <%= f.text_field :company %>
-  </div>
 
-<div class="field">
-    <%= f.label :deal_name %><br />
-    <%= f.text_field :deal_name %>
-  </div>
+  <h4>Create a Deal</h4>
+    <p>Warning. You must assign an deal to this contact. Otherwise the record will not save.</p>
+    <div class="form-icons">
+      <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-user"></i>
+      </span>
+        <% f.label :company %>
+        <%= f.text_field :company, placeholder: "Company" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :value %><br />
-    <%= f.text_field :value %>
-  </div>
+    <div class="form-icons">
+      <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-user"></i>
+      </span>
+      <% f.label :deal_name %>
+      <%= f.text_field :deal_name, placeholder: "Deal Name" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :discount_percentage %><br />
-    <%= f.text_field :discount_percentage %>
-  </div>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-envelope"></i>
+      </span>
+      <% f.label :value %>
+      <%= f.text_field :value, placeholder: "Value" %>
+    </div>
 
-    <div class="field">
-    <%= f.label :stage %><br />
-    <%= f.text_field :stage %>
-  </div>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+      <% f.label :discount_percentage %>
+      <%= f.text_field :discount_percentage, placeholder: "Discount Percentage" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :quantity %><br />
-    <%= f.text_field :quantity %>
-  </div>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+      <% f.label :stage %>
+      <%= f.text_field :stage, placeholder: "Stage" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
+    <div class="input-group">
+      <span class="input-group-label">
+        <i class="fa fa-key"></i>
+      </span>
+      <% f.label :description %>
+      <%= f.text_field :description, placeholder: "Description" %>
 
+    </div>
   <div class="actions">
-    <%= f.submit "Add Deal"%>
+    <%= f.submit "Create Deal"%>
   </div>
+  </div>
+  <% end %>
 
-<% end %>
+
 
 
