@@ -28,6 +28,6 @@ feature 'user signs out', %Q{
 
   scenario 'unauthenticated user attempts to sign out' do
     visit '/'
-    expect(page).to_not have_content('Sign Out')
+    expect(page).to_not have_content('A CRM for Salespeople. By Salespeople.')
   end
 end
