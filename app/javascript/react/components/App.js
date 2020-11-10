@@ -1,7 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Board from './Board';
 
 export const App = (props) => {
-  return (<h1>Make It So React</h1>)
+  return (
+  <div className = "app">
+    <main className = "flexbox">
+      <Board />
+    </main>
+
+  </div>)
 }
 
 export default App

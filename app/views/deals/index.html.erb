@@ -4,10 +4,6 @@
 
 
 <div id="app"></div>
-<ul>
-<% @Deals.each do |deal|%>
-    <li><%=link_to deal.deal_name, deal %></li>
-<%end%>
-</ul>
+
 
 <%=link_to "Add a Deal", new_deal_path %>

@@ -9,7 +9,7 @@ def check_auth
     if user_signed_in?
       render :index
     else user_signed_in?
-        render :splash
+        render :layout => 'splash'
     end
   end
 end
