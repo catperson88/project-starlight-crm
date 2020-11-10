@@ -23,11 +23,11 @@ feature 'user signs out', %Q{
     expect(page).to have_content('Signed in successfully')
 
     click_link 'Sign Out'
-    expect(page).to have_content('Signed out.')
+    expect(page).to have_content('A CRM for Salespeople. By Salespeople.')
   end
 
   scenario 'unauthenticated user attempts to sign out' do
     visit '/'
-    expect(page).to_not have_content('A CRM for Salespeople. By Salespeople.')
+    expect(page).to_not have_content('Sign Out')
   end
 end
