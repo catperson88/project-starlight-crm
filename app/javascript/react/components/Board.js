@@ -49,7 +49,7 @@ const Board = (props) => {
         setDealData(body.deals);
         setPositions(body.deals.map((c) => ({
           cardId: c.id,
-          columnId: c.stageId || columns[0].id, 
+          columnId: camelize(c.stage) || columns[0].id, 
         })))
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`))
@@ -67,7 +67,7 @@ const Board = (props) => {
       setLastDragged={setLastDragged}
       positions={positions}
       setPositions={setPositions}
-      stage = {name}
+      stage = {c.name}
     />
   ));
 

@@ -37,7 +37,7 @@ function DealTile({ id, dealName, value, onDrag }) {
 				onDrag={handleDrag}
 				onDragEnd={handleDragEnd}
 			>
-				<div className="title-segment">{dealName}</div>
+				<div className="title-segment"><a href={`/deals/${id}`}>{dealName}</a></div>
 				<div className="content-segment">{value}</div>
 			</div>
 		</motion.div>
