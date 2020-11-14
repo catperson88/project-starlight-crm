@@ -10,7 +10,6 @@ def check_auth
       render :index
     else user_signed_in?
         render :layout => 'splash'
-        flash[:notice]= "Signed Out."
     end
   end
 end

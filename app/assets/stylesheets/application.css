@@ -29,4 +29,82 @@
  }
 
 
+ .deal-tile {
+   background: #ffffff;
+   color: #333;
+  margin-bottom: 0.5em;
+  border-radius: 0.25em;
+  position: relative;
+  z-index: 10;
+ }
+
+.deal-title {
+  padding: 1em;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: .25em
+}
+
+
+.column-container {
+  display: flex;
+  height: 100vh;
+}
+
+
+.tile {
+  background: #fafafa;
+  color: #333;
+  margin-bottom: .5em;
+  border-radius: .25em;
+  position: relative;
+  z-index: 10;
+  }
+
+  .title-segment {
+    padding: 1em;
+    border-bottom: 1px;
+    border-style: "solid";
+    border-color: #333;
+    }
+    
+  .content-segment {
+      padding: 1em,
+    }
  
+.column {
+  z-index: 0;
+  flex: 1;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: #333
+}
+  .column:last-child {
+    border-right: 0px;
+  }
+
+  .column-title {
+      font-weight: 600;
+      padding: 1em;
+      border-bottom-width: 1px; 
+      border-bottom-style: solid;
+      border-bottom-color: #333
+
+    }
+
+  .column-deals {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    flex-grow: 1
+  }
+
+
+  .column-title {
+    color: #333
+  }
