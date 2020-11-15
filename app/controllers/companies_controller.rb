@@ -20,16 +20,16 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @company_nil_catch = params[:company][:account]
+    @account_nil_catch = params[:company][:account]
     if @account_nil_catch.nil? 
       @account= Account.find(params[:account_id])
       dry_up_create(company_params)
-    else  
-      @account = Account.find_by! name: @company_nil_catch
+    else
+      @account = Account.find_by! name: @account_nil_catch
       dry_up_create(company_params)
     end
 
-    if @company.save
+    if @company.save 
       flash[:notice]= "Company added successfully"
       redirect_to @company
     elsif @company.save == false && @account_nil_catch.nil?
