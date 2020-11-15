@@ -1,4 +1,5 @@
 import React, { useEffect, useState, Fragment } from "react";
+import { fetchDeals } from "./api/fetchDeals";
 import DealTile from "./DealTile";
 
 const Board = (props) => {
@@ -6,25 +7,8 @@ const Board = (props) => {
   const [ getDealData, setDealData] = useState([]);
 
   useEffect(() => {
-    fetch('/api/deals.json')
-      .then(response => {
-        console.log("Response was")
-        console.log(response)
-
-        if (response.ok) {
-          return response
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage)
-          throw error
-        }
-      })
-      .then(response => response.json())
-      .then(body => {
-        setDealData(body.deals);
-      })
-      .catch(error => console.error(`Error in fetch: ${error.message}`))
-  }, []);
+    fetchDeals.then(body => setDealData(body.deals))
+  },[])
 
   
   const dealTiles = getDealData.map((deal) => {
