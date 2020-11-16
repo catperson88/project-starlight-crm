@@ -17,7 +17,7 @@ function Column({
     const matchingDeal = cards.find((deal) => deal.id === cv.cardId);
     return matchingDeal ? [...acc, matchingDeal] : acc;
   }, []);
-  
+
   const dealComponents = dealCards.map(
     ({ id, deal_name: dealName, value }) => (
       <DealTile

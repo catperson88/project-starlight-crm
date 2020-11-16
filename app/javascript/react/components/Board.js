@@ -2,6 +2,7 @@ import React, { useEffect, useState, Fragment } from "react";
 import DealTile from "./DealTile";
 import shortid from "shortid";
 import Column from "./Column"
+import { fetchDeals } from "./api/board";
 
 function camelize(str) {
   return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
@@ -32,30 +33,16 @@ const Board = (props) => {
 
   const [lastDragged, setLastDragged] = React.useState(null);
   
-
   useEffect(() => {
-    fetch('/api/deals.json')
-      .then(response => {
-        if (response.ok) {
-          return response
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage)
-          throw error
-        }
-      })
-      .then(response => response.json())
-      .then(body => {
-        setDealData(body.deals);
-        setPositions(body.deals.map((c) => ({
-          cardId: c.id,
-          columnId: camelize(c.stage) || columns[0].id, 
-        })))
-      })
-      .catch(error => console.error(`Error in fetch: ${error.message}`))
-  }, []);
-
-
+    fetchDeals()
+    .then(body => {
+      setDealData(body.deals);
+      setPositions(body.deals.map((c) => ({
+        cardId: c.id,
+        columnId: camelize(c.stage) || columns[0].id,
+      })))
+    })
+  }, [])
 
 
   const columnComponents = columns.map((c) => (
