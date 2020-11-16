@@ -29,4 +29,101 @@
  }
 
 
+ .deal-tile {
+   background: #ffffff;
+   color: #333;
+  margin-bottom: 0.5em;
+  border-radius: 0.25em;
+  position: relative;
+  z-index: 10;
+ }
+
+.deal-title {
+  padding: 1em;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: .25em
+}
+
+
+.column-container {
+  display: flex;
+  height: 100vh;
+  background-color: #E6E8EB;
+}
+
+
+.tile {
+  background: #fafafa;
+  color: #333;
+
+  border-radius: 16px;
+  position: relative;
+  z-index: 10;
+  -webkit-column-break-inside: avoid;
+          break-inside: avoid;
+  margin-bottom: 1rem;
+  box-shadow: 2px 3px;
+  }
+
+  .title-segment {
+    padding: 1em;
+    border-bottom: 1px;
+    border-style: "solid";
+    border-color: #333;
+    }
+    
+  .content-segment {
+      padding: 1em,
+    }
  
+.column {
+  -webkit-column-count: 1;
+          column-count: 1;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  z-index: 0;
+  flex: 1;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-right-width: 1px;
+  border-right-color: #333;
+  border-right-style: solid;
+  padding: 3px;
+  margin: 3px
+}
+  .column:last-child {
+    border-right: 0px;
+  }
+
+  .column-title {
+      font-weight: 600;
+      padding: 1em;
+      border-bottom-width: 1px; 
+      border-bottom-style: solid;
+      border-bottom-color: #333;
+      text-align: center;
+
+    }
+
+  .column-deals {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    flex-grow: 1;
+    column-gap: 1rem;
+    
+  }
+
+
+  .column-title {
+    color: #333
+  }
+
+  .content-segment {
+    text-align: right;
+    padding: 2px
+  }
